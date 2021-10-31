@@ -19,7 +19,7 @@ public class CamelSqlConsumerRoute extends RouteBuilder {
 		    	.setBody(constant("file upload complete"))
 		    	.to("rabbitmqLog:{{demo.exchangeName}}?connectionFactory=#rabbitConnectionFactory&declare=false&autoDelete=false&arg.queue.x-message-ttl=20000")
 		    	.end()
-		    .onCompletion().onFailureOnly()
+		    .onException(Exception.class)
 		    	.to("bean:mySqlDBHandler?method=onFailure")
 		    	.setHeader(RabbitMQConstants.ROUTING_KEY, simple("${properties:camel.rabbitmq.routingKey}"))
 		    	.setBody(constant("file upload failed"))
