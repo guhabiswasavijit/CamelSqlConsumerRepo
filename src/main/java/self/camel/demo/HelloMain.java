@@ -8,10 +8,5 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class HelloMain {
     public static void main(String[] args) throws Exception {
     	ConfigurableApplicationContext ctx = SpringApplication.run(HelloMain.class, args);
-		/*
-		 * RouteStartUpController controller =
-		 * (RouteStartUpController)ctx.getBean("routeStartUpController");
-		 * controller.startRoutes();
-		 */
     }
 }

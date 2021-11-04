@@ -41,4 +41,8 @@
         <level value="DEBUG" />
         <appender-ref ref="RollingFile" />
     </logger>
+    <logger name="org.apache.velocity" additivity="false">
+        <level value="DEBUG" />
+        <appender-ref ref="RollingFile" />
+    </logger>
 </configuration>
