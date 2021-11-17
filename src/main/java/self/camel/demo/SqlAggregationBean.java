@@ -32,7 +32,7 @@ public class SqlAggregationBean {
 		Arrays.stream(dataArray).forEach(withCounter((dIdx, str) -> {
 			StringBuffer key = new StringBuffer("clm");
 			key = key.append(dIdx);
-		    dataMap.put(key.toString(),str);
+		    dataMap.put(key.toString(),str != null?str.trim():"");
 		}));
 		dataMap.entrySet().forEach(entry -> {
 			Map.Entry<String,Object> keyVal = (Map.Entry<String,Object>) entry;
